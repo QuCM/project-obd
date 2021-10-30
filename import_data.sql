@@ -22,9 +22,9 @@ CREATE TABLE reseau
   geometry_type VARCHAR(100),
   geometry_coordinates POINT,
   geo_shape_type VARCHAR(100),
-  geo_shape_coordinates_1 PATH,
-  geo_shape_coordinates_2 PATH,
-  geo_shape_coordinates_3 PATH
+  geo_shape_coordinates_1 POINT[],
+  geo_shape_coordinates_2 POINT[],
+  geo_shape_coordinates_3 POINT[]
 );
 
 \COPY reseau(datasetid, recordid, record_timestamp, commune, obs_gestion, section, geo_point_2d, nom_voie, mot_directeur, pole, tm, observations, code_insee, carte_velo, longueur_m, type, obs_type, revetement, eclairage, geometry_type, geometry_coordinates, geo_shape_type, geo_shape_coordinates_1, geo_shape_coordinates_2, geo_shape_coordinates_3) FROM './data/reseau-cyclable-et-vert.csv' DELIMITER ',' CSV HEADER
